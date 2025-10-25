@@ -25,5 +25,5 @@ pip install --editable .
 ```
 
 ## Document
-
+All the detail can be found at [here](https://kns.readthedocs.io/en/latest/)
 
