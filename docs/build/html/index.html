@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kuan Lab Neuron Segmentation Pipeline Documentation &mdash; K-NeuronSeg 1.0 documentation</title>
+  <title>Kuan Lab Neuron Segmentation Pipeline (Magneton) Documentation &mdash; K-NeuronSeg 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=92fd9be5" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
@@ -43,11 +43,14 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">intrioduction</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="about.html#magneton-consists-of-3-main-modules">Magneton consists of 3 main modules:</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">installation</span></p>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation/conda.html">Virtual Environment</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="installation/conda.html#download-miniconda-or-anaconda">Download Miniconda or Anaconda</a></li>
@@ -57,19 +60,28 @@
 <li class="toctree-l2"><a class="reference internal" href="installation/conda.html#verify-installation">Verify Installation</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="installation/kns.html">Instance Segmentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="installation/kns.html#create-a-virtual-environment">Create a Virtual Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation/kns.html#install-k-neuronseg">Install K-NeuronSeg</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="installation/kns.html#install-all-modules">Install All Modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="installation/kns.html#install-affinity-maps-inference-module">Install Affinity Maps Inference Module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="installation/kns.html#install-waterz">Install Waterz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation/magneton.html">Instance Segmentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation/magneton.html#create-a-virtual-environment">Create a Virtual Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/magneton.html#install-k-neuronseg">Install K-NeuronSeg</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation/magneton.html#install-all-modules">Install All Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation/magneton.html#install-affinity-maps-inference-module">Install Affinity Maps Inference Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation/magneton.html#install-waterz">Install Waterz</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">tutorials</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/toolkit.html">Processing Toolkit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/toolkit.html#main-menu">Main Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/toolkit.html#options">Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/toolkit.html#global-configuration">Global Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorials/toolkit.html#data-preprocessing-and-postprocessing">Data preprocessing and postprocessing</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/aff.html">Affinity Map Inference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/aff.html#main-menu">Main Menu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/aff.html#options">Options</a><ul>
@@ -77,7 +89,6 @@
 <li class="toctree-l3"><a class="reference internal" href="tutorials/aff.html#model-pretraining">Model pretraining</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/aff.html#model-fine-tuning">Model fine-tuning</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/aff.html#model-inference">Model inference</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials/aff.html#tools">Tools</a></li>
 </ul>
 </li>
 </ul>
@@ -91,7 +102,6 @@
 <li class="toctree-l3"><a class="reference internal" href="tutorials/ins.html#blocks-merging-apply">Blocks merging: apply</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/ins.html#status">Status</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tutorials/ins.html#clean">Clean</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tutorials/ins.html#tools">Tools</a></li>
 </ul>
 </li>
 </ul>
@@ -112,7 +122,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Kuan Lab Neuron Segmentation Pipeline Documentation</li>
+      <li class="breadcrumb-item active">Kuan Lab Neuron Segmentation Pipeline (Magneton) Documentation</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -122,16 +132,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="kuan-lab-neuron-segmentation-pipeline-documentation">
-<h1>Kuan Lab Neuron Segmentation Pipeline Documentation<a class="headerlink" href="#kuan-lab-neuron-segmentation-pipeline-documentation" title="Link to this heading"></a></h1>
+  <section id="kuan-lab-neuron-segmentation-pipeline-magneton-documentation">
+<h1>Kuan Lab Neuron Segmentation Pipeline (Magneton) Documentation<a class="headerlink" href="#kuan-lab-neuron-segmentation-pipeline-magneton-documentation" title="Link to this heading"></a></h1>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">intrioduction</span></p>
+<p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">installation</span></p>
+<p class="caption" role="heading"><span class="caption-text">Installation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation/conda.html">Virtual Environment</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="installation/conda.html#download-miniconda-or-anaconda">Download Miniconda or Anaconda</a></li>
@@ -141,16 +151,21 @@
 <li class="toctree-l2"><a class="reference internal" href="installation/conda.html#verify-installation">Verify Installation</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="installation/kns.html">Instance Segmentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="installation/kns.html#create-a-virtual-environment">Create a Virtual Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation/kns.html#install-k-neuronseg">Install K-NeuronSeg</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation/magneton.html">Instance Segmentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation/magneton.html#create-a-virtual-environment">Create a Virtual Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/magneton.html#install-k-neuronseg">Install K-NeuronSeg</a></li>
 </ul>
 </li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">tutorials</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials/toolkit.html">Processing Toolkit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/toolkit.html#main-menu">Main Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorials/toolkit.html#options">Options</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials/aff.html">Affinity Map Inference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/aff.html#main-menu">Main Menu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tutorials/aff.html#options">Options</a></li>

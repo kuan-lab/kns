@@ -1,0 +1,2 @@
+[console_scripts]
+magneton = magneton.main:main

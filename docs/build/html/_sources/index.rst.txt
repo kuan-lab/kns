@@ -3,26 +3,27 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Kuan Lab Neuron Segmentation Pipeline Documentation
+Kuan Lab Neuron Segmentation Pipeline (Magneton) Documentation
 ================================
 
 .. toctree::
    :maxdepth: 1
-   :caption: intrioduction
+   :caption: Introduction
    
    about
 
 .. toctree::
    :maxdepth: 2
-   :caption: installation
+   :caption: Installation
    
    installation/conda
-   installation/kns
+   installation/magneton
 
 .. toctree::
    :maxdepth: 2
-   :caption: tutorials
+   :caption: Tutorials
    
+   tutorials/toolkit
    tutorials/aff
    tutorials/ins
 

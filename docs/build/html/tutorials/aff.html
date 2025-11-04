@@ -22,7 +22,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Instance Segmentation" href="ins.html" />
-    <link rel="prev" title="Instance Segmentation" href="../installation/kns.html" /> 
+    <link rel="prev" title="Processing Toolkit" href="toolkit.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -44,11 +44,14 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">intrioduction</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../about.html#magneton-consists-of-3-main-modules">Magneton consists of 3 main modules:</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">installation</span></p>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/conda.html">Virtual Environment</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../installation/conda.html#download-miniconda-or-anaconda">Download Miniconda or Anaconda</a></li>
@@ -58,19 +61,28 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/conda.html#verify-installation">Verify Installation</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../installation/kns.html">Instance Segmentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../installation/kns.html#create-a-virtual-environment">Create a Virtual Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/kns.html#install-k-neuronseg">Install K-NeuronSeg</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../installation/kns.html#install-all-modules">Install All Modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../installation/kns.html#install-affinity-maps-inference-module">Install Affinity Maps Inference Module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../installation/kns.html#install-waterz">Install Waterz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/magneton.html">Instance Segmentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/magneton.html#create-a-virtual-environment">Create a Virtual Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/magneton.html#install-k-neuronseg">Install K-NeuronSeg</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../installation/magneton.html#install-all-modules">Install All Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../installation/magneton.html#install-affinity-maps-inference-module">Install Affinity Maps Inference Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../installation/magneton.html#install-waterz">Install Waterz</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">tutorials</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="toolkit.html">Processing Toolkit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.html#main-menu">Main Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.html#options">Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.html#global-configuration">Global Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.html#data-preprocessing-and-postprocessing">Data preprocessing and postprocessing</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Affinity Map Inference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#main-menu">Main Menu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#options">Options</a><ul>
@@ -78,7 +90,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#model-pretraining">Model pretraining</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#model-fine-tuning">Model fine-tuning</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#model-inference">Model inference</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#tools">Tools</a></li>
 </ul>
 </li>
 </ul>
@@ -92,7 +103,6 @@
 <li class="toctree-l3"><a class="reference internal" href="ins.html#blocks-merging-apply">Blocks merging: apply</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ins.html#status">Status</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ins.html#clean">Clean</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ins.html#tools">Tools</a></li>
 </ul>
 </li>
 </ul>
@@ -131,15 +141,14 @@
 </div></blockquote>
 <section id="main-menu">
 <h2>Main Menu<a class="headerlink" href="#main-menu" title="Link to this heading"></a></h2>
-<p>Run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">K_NeuronSeg</span></code> to start the CLI.</p>
-<p><img alt="Main" src="../_images/main.png" />
-The main interface consists of two functional modules: affinity map inference module and instance segmentation module.</p>
-<p>Input <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, enter the <strong>affinity map inference module</strong>:
+<p>Run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">magneton</span></code> to start the CLI.</p>
+<p><img alt="Main" src="../_images/main.png" /></p>
+<p>Input <code class="docutils literal notranslate"><span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, enter the <strong>affinity map inference module</strong>:
 <img alt="affinity map inference module" src="../_images/aff.png" /></p>
 </section>
 <section id="options">
 <h2>Options<a class="headerlink" href="#options" title="Link to this heading"></a></h2>
-<p>This module can be used for configuration, model pretraining, fine-tuning, inference, data preprocessing and postprocessing.</p>
+<p>This module can be used for configuration, model pretraining, fine-tuning and inference.</p>
 <ul class="simple">
 <li><p>In pretraining: the model is pre-trained by inputting images and labeled images. This ultimately yields the pre-trained model parameters.</p></li>
 <li><p>In fine-tuning: for specific imaging data, fine-tune the model by inputting images and labeled images (often as mini-batches for a single bounding box). This process ultimately yields the final model parameters.</p></li>
@@ -147,34 +156,9 @@ The main interface consists of two functional modules: affinity map inference mo
 </ul>
 <section id="global-configuration">
 <h3>Global Configuration<a class="headerlink" href="#global-configuration" title="Link to this heading"></a></h3>
-<p>Input <code class="docutils literal notranslate"><span class="pre">9</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, view current <strong>global configuration</strong>:
-<img alt="global configuration" src="../_images/aff9.png" /></p>
-<p>For the title:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Section</span></code>: the configuration file for which module.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Parameter</span></code>: the key in configuration file.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Value</span></code>: the value of key</p></li>
-</ul>
-<p>For the keys in affinity map inference module:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">config_base</span></code>: the base config file path for pytc, details see <a class="reference external" href="https://connectomics.readthedocs.io/en/latest/tutorials/neuron.html">pytc document</a>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">config_file</span></code>: the network config file path for pytc, details see <a class="reference external" href="https://connectomics.readthedocs.io/en/latest/tutorials/neuron.html">pytc document</a>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">checkpoint</span></code>: the checkpoint path for fine-tuning and inference.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">hpc</span></code>: the hpc config file path.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">split</span></code>: the config file path for split tool.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">merge</span></code>: the config file path for merge tool.</p></li>
-</ul>
-<blockquote>
-<div><p><em><strong>The meaning of each parameter is documented in every configuration file.</strong></em></p>
-</div></blockquote>
-<p>Input <code class="docutils literal notranslate"><span class="pre">8</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, edit current <strong>global configuration</strong>:</p>
-<blockquote>
-<div><p>Currently, only modifications are permitted; additions are not allowed.</p>
-</div></blockquote>
-<p>You can modify the current configuration file path.
-<img alt="modify the current configuration file path" src="../_images/aff81.png" />
-And select a value to change:
-<img alt="select a value to change" src="../_images/aff82.png" /></p>
+<p>This section is identical to the previous configuration. Only an interface has been added to facilitate configuration.
+Input <code class="docutils literal notranslate"><span class="pre">9</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, view current <strong>global configuration</strong>:
+Input <code class="docutils literal notranslate"><span class="pre">8</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, edit current <strong>global configuration</strong>.</p>
 </section>
 <section id="model-pretraining">
 <h3>Model pretraining<a class="headerlink" href="#model-pretraining" title="Link to this heading"></a></h3>
@@ -186,7 +170,6 @@ And select a value to change:
 <blockquote>
 <div><p>You can use <code class="docutils literal notranslate"><span class="pre">Ctrl+C</span></code> to stop it and Enter main menu.</p>
 </div></blockquote>
-<p><img alt="stop it" src="../_images/aff12.png" /></p>
 <p>When using <em><strong>HPC resources</strong></em>, you need to configure the hpc and the job will submit to the hpc based on this configuration:
 <img alt="modify the configuration" src="../_images/aff13.png" />
 You can change the parameters based on this CLI or <em><strong>directly modify the configuration file</strong></em>.</p>
@@ -210,19 +193,6 @@ You can change the parameters based on this CLI or <em><strong>directly modify t
 <li><p><code class="docutils literal notranslate"><span class="pre">batch_num</span></code>: the number of blocks in parallel at once</p></li>
 </ul>
 </section>
-<section id="tools">
-<h3>Tools<a class="headerlink" href="#tools" title="Link to this heading"></a></h3>
-<p>Input <code class="docutils literal notranslate"><span class="pre">7</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, enter the <strong>tool menu</strong>:
-<img alt="tool menu" src="../_images/tool.png" /></p>
-<p>Input <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, using <em><strong>local resources</strong></em> to split tif/precomputed volume to tif blocks with overlap.</p>
-<p>Input <code class="docutils literal notranslate"><span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, using <em><strong>HPC resources</strong></em> to split tif/precomputed volume to tif blocks with overlap.</p>
-<p>The tool is based on the configuration files (<code class="docutils literal notranslate"><span class="pre">split</span></code> in global configuration file).Before start the training, you can modify the configuration by CLI or any tools:
-<img alt="split" src="../_images/tool1.png" /></p>
-<p>Input <code class="docutils literal notranslate"><span class="pre">3</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, using <em><strong>local resources</strong></em> to merge h5 blocks (inference) to tif/precomputed volume with overlap.</p>
-<p>Input <code class="docutils literal notranslate"><span class="pre">4</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, using <em><strong>HPC resources</strong></em> to merge h5 blocks (inference) to tif/precomputed volume with overlap.</p>
-<p>The tool is based on the configuration files (<code class="docutils literal notranslate"><span class="pre">merge</span></code> in global configuration file).Before start the training, you can modify the configuration by CLI or any tools:
-<img alt="merge" src="../_images/tool2.png" /></p>
-</section>
 </section>
 </section>
 
@@ -230,7 +200,7 @@ You can change the parameters based on this CLI or <em><strong>directly modify t
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../installation/kns.html" class="btn btn-neutral float-left" title="Instance Segmentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="toolkit.html" class="btn btn-neutral float-left" title="Processing Toolkit" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="ins.html" class="btn btn-neutral float-right" title="Instance Segmentation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

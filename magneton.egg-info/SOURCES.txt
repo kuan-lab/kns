@@ -1,0 +1,8 @@
+README.md
+setup.py
+magneton.egg-info/PKG-INFO
+magneton.egg-info/SOURCES.txt
+magneton.egg-info/dependency_links.txt
+magneton.egg-info/entry_points.txt
+magneton.egg-info/requires.txt
+magneton.egg-info/top_level.txt

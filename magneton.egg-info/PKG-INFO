@@ -1,0 +1,71 @@
+Metadata-Version: 2.1
+Name: magneton
+Version: 1.0.0
+Summary: Neuron segmentation and pipeline developed by Kuan Lab.
+Home-page: https://github.com/kuan-lab/magneton.git
+Author: Kuan Lab
+Author-email: xxx
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Image Recognition
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: cloud_volume==12.0.0
+Requires-Dist: docutils==0.21.2
+Requires-Dist: einops==0.8.0
+Requires-Dist: GPUtil==1.4.0
+Requires-Dist: h5py==3.12.1
+Requires-Dist: igneous==1.1.1
+Requires-Dist: igneous_pipeline==4.27.0
+Requires-Dist: imageio==2.36.1
+Requires-Dist: mahotas==1.4.18
+Requires-Dist: matplotlib==3.9.4
+Requires-Dist: monai==1.4.0
+Requires-Dist: numpy==1.26.4
+Requires-Dist: opencv_python==4.10.0.84
+Requires-Dist: pandas==2.3.3
+Requires-Dist: Pillow==11.0.0
+Requires-Dist: PyYAML==6.0.2
+Requires-Dist: rich==14.2.0
+Requires-Dist: scikit_learn==1.6.0
+Requires-Dist: scipy==1.13.1
+Requires-Dist: setuptools==75.1.0
+Requires-Dist: scikit-image==0.24.0
+Requires-Dist: task_queue==2.14.0
+Requires-Dist: tifffile==2024.8.30
+Requires-Dist: tqdm==4.67.1
+Requires-Dist: yacs==0.1.8
+
+# Magneton
+
+**Magneton** is a neuron segmentation pipeline developed by [Kuan Lab](https://www.kuanlab.org/). This pipeline employs a chunked based mode for processing large-scale 3D EM data in neuron segmentation tasks. It is currently available as a CLI tool, supporting both local jobs and HPC jobs.
+
+> Based on Linux machines with NVIDIA GPUs
+
+It supports:
+
+Data pre- and post-processing toolkit
+- Resize a tif data
+- Split a big tif data to blocks   
+- Merge h5 files as a volume
+- Convert a tif/h5 file as a precomputed data
+- Downsample a precomputed data
+- Generate a mask for affinity map
+- Mask a tif/precomputed data
+
+Deep learning based affinity maps inference
+> Based on [PyTorch Connectomics](https://connectomics.readthedocs.io/en/latest/index.html).This is a deep learning framework for automatic and semi-automatic annotation of connectomics datasets, powered by [PyTorch](https://pytorch.org/).
+- Pre-tain/fine-tune a DL model   
+- Inference affinity map by blocks 
+
+Instance segmentation for affinity maps
+- Affinity map blocking and independent segmentation  
+- Aggregation of each blocked segmentation result 
+
+
+## Document
+All the detail can be found at [here](https://magneton.readthedocs.io/en/latest/)
+

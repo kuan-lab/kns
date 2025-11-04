@@ -4,18 +4,17 @@ This tutorial provides step-by-step guidance for affinity map inference pipeline
 
 #### Main Menu
 
-Run ```python -m K_NeuronSeg``` to start the CLI.
+Run ```python -m magneton``` to start the CLI.
 
 ![Main](../_static/main.png)
-The main interface consists of two functional modules: affinity map inference module and instance segmentation module.
 
-Input ```1``` and ```Enter```, enter the **affinity map inference module**:
+Input ```2``` and ```Enter```, enter the **affinity map inference module**:
 ![affinity map inference module](../_static/aff.png)
 
  
 #### Options
 
-This module can be used for configuration, model pretraining, fine-tuning, inference, data preprocessing and postprocessing. 
+This module can be used for configuration, model pretraining, fine-tuning and inference. 
 
 - In pretraining: the model is pre-trained by inputting images and labeled images. This ultimately yields the pre-trained model parameters.
 
@@ -24,31 +23,9 @@ This module can be used for configuration, model pretraining, fine-tuning, infer
 - In inference: inferring neuronal affinity maps for large-scale data using the final model.This process involves image blocking and stitching.
 
 ##### Global Configuration
+This section is identical to the previous configuration. Only an interface has been added to facilitate configuration.
 Input ```9``` and ```Enter```, view current **global configuration**:
-![global configuration](../_static/aff9.png)
-
-For the title:
-- ```Section```: the configuration file for which module.
-- ```Parameter```: the key in configuration file.
-- ```Value```: the value of key
-
-For the keys in affinity map inference module:
-- ```config_base```: the base config file path for pytc, details see [pytc document](https://connectomics.readthedocs.io/en/latest/tutorials/neuron.html).
-- ```config_file```: the network config file path for pytc, details see [pytc document](https://connectomics.readthedocs.io/en/latest/tutorials/neuron.html).
-- ```checkpoint```: the checkpoint path for fine-tuning and inference.
-- ```hpc```: the hpc config file path.
-- ```split```: the config file path for split tool.
-- ```merge```: the config file path for merge tool.
-
-> ***The meaning of each parameter is documented in every configuration file.***
-
-Input ```8``` and ```Enter```, edit current **global configuration**:
-> Currently, only modifications are permitted; additions are not allowed.
-
-You can modify the current configuration file path.
-![modify the current configuration file path](../_static/aff81.png)
-And select a value to change:
-![select a value to change](../_static/aff82.png)
+Input ```8``` and ```Enter```, edit current **global configuration**.
 
 ##### Model pretraining
 Input ```1``` and ```Enter```, using ***local resources*** to pre train a model. The model is based on the configuration files (```config_base``` and ``config_file``,  in global configuration file)
@@ -60,8 +37,6 @@ Before start the training, you can modify the configuration:
 
 Then the pre-training will run automatically. 
 > You can use ```Ctrl+C``` to stop it and Enter main menu.
-
-![stop it](../_static/aff12.png)
 
 When using ***HPC resources***, you need to configure the hpc and the job will submit to the hpc based on this configuration:
 ![modify the configuration](../_static/aff13.png)
@@ -87,25 +62,6 @@ However, for HPC configuration files, this ```mutil_jobs``` switch must be enabl
 - ```configs_save_path```: subprofile storage location
 - ```input_floder```: the path of blocks
 - ```batch_num```: the number of blocks in parallel at once
-
-##### Tools
-Input ```7``` and ```Enter```, enter the **tool menu**:
-![tool menu](../_static/tool.png)
-
-Input ```1``` and ```Enter```, using ***local resources*** to split tif/precomputed volume to tif blocks with overlap. 
-
-Input ```2``` and ```Enter```, using ***HPC resources*** to split tif/precomputed volume to tif blocks with overlap. 
-
-The tool is based on the configuration files (```split``` in global configuration file).Before start the training, you can modify the configuration by CLI or any tools:
-![split](../_static/tool1.png)
-
-Input ```3``` and ```Enter```, using ***local resources*** to merge h5 blocks (inference) to tif/precomputed volume with overlap. 
-
-Input ```4``` and ```Enter```, using ***HPC resources*** to merge h5 blocks (inference) to tif/precomputed volume with overlap. 
-
-The tool is based on the configuration files (```merge``` in global configuration file).Before start the training, you can modify the configuration by CLI or any tools:
-![merge](../_static/tool2.png)
-
 
 
 

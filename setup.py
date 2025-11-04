@@ -6,14 +6,14 @@ def read_requirements():
         return [line.strip() for line in f if line.strip() and not line.startswith("#")]
 
 setup(
-    name="kns",
+    name="magneton",
     version="1.0.0",
     author="Kuan Lab",
     author_email="xxx",
     description="Neuron segmentation and pipeline developed by Kuan Lab.",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/kuan-lab/kns.git",
+    url="https://github.com/kuan-lab/magneton.git",
     license="MIT",
     packages=find_packages(exclude=("tests", "docs")),
     include_package_data=True,
@@ -21,7 +21,7 @@ setup(
     python_requires=">=3.8",
     entry_points={
         "console_scripts": [
-            "kns=kns.main:main",  # CLI entrypoint
+            "magneton=magneton.main:main",  # CLI entrypoint
         ],
     },
     classifiers=[

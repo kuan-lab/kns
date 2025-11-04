@@ -43,11 +43,14 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">intrioduction</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../about.html#magneton-consists-of-3-main-modules">Magneton consists of 3 main modules:</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">installation</span></p>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Installation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation/conda.html">Virtual Environment</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../installation/conda.html#download-miniconda-or-anaconda">Download Miniconda or Anaconda</a></li>
@@ -57,19 +60,28 @@
 <li class="toctree-l2"><a class="reference internal" href="../installation/conda.html#verify-installation">Verify Installation</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../installation/kns.html">Instance Segmentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../installation/kns.html#create-a-virtual-environment">Create a Virtual Environment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../installation/kns.html#install-k-neuronseg">Install K-NeuronSeg</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../installation/kns.html#install-all-modules">Install All Modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../installation/kns.html#install-affinity-maps-inference-module">Install Affinity Maps Inference Module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../installation/kns.html#install-waterz">Install Waterz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../installation/magneton.html">Instance Segmentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../installation/magneton.html#create-a-virtual-environment">Create a Virtual Environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/magneton.html#install-k-neuronseg">Install K-NeuronSeg</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../installation/magneton.html#install-all-modules">Install All Modules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../installation/magneton.html#install-affinity-maps-inference-module">Install Affinity Maps Inference Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../installation/magneton.html#install-waterz">Install Waterz</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">tutorials</span></p>
+<p class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="toolkit.html">Processing Toolkit</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.html#main-menu">Main Menu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="toolkit.html#options">Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.html#global-configuration">Global Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="toolkit.html#data-preprocessing-and-postprocessing">Data preprocessing and postprocessing</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="aff.html">Affinity Map Inference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="aff.html#main-menu">Main Menu</a></li>
 <li class="toctree-l2"><a class="reference internal" href="aff.html#options">Options</a><ul>
@@ -77,7 +89,6 @@
 <li class="toctree-l3"><a class="reference internal" href="aff.html#model-pretraining">Model pretraining</a></li>
 <li class="toctree-l3"><a class="reference internal" href="aff.html#model-fine-tuning">Model fine-tuning</a></li>
 <li class="toctree-l3"><a class="reference internal" href="aff.html#model-inference">Model inference</a></li>
-<li class="toctree-l3"><a class="reference internal" href="aff.html#tools">Tools</a></li>
 </ul>
 </li>
 </ul>
@@ -91,7 +102,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#blocks-merging-apply">Blocks merging: apply</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#status">Status</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#clean">Clean</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#tools">Tools</a></li>
 </ul>
 </li>
 </ul>
@@ -125,15 +135,11 @@
   <section id="instance-segmentation">
 <h1>Instance Segmentation<a class="headerlink" href="#instance-segmentation" title="Link to this heading"></a></h1>
 <p>This tutorial provides step-by-step guidance for instance segmentation pipeline.</p>
-<blockquote>
-<div><p>This section is integration and encapsulation of pytc. For more detailed, please refer to <a class="reference external" href="https://connectomics.readthedocs.io/en/latest/tutorials/neuron.html">pytc document</a>.</p>
-</div></blockquote>
 <section id="main-menu">
 <h2>Main Menu<a class="headerlink" href="#main-menu" title="Link to this heading"></a></h2>
-<p>Run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">K_NeuronSeg</span></code> to start the CLI.</p>
-<p><img alt="Main" src="../_images/main.png" />
-The main interface consists of two functional modules: affinity map inference module and instance segmentation module.</p>
-<p>Input <code class="docutils literal notranslate"><span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, enter the <strong>instance segmentation module</strong>:
+<p>Run <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">magneton</span></code> to start the CLI.</p>
+<p><img alt="Main" src="../_images/main.png" /></p>
+<p>Input <code class="docutils literal notranslate"><span class="pre">3</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, enter the <strong>instance segmentation module</strong>:
 <img alt="instance segmentation module" src="../_images/ins.png" /></p>
 </section>
 <section id="options">
@@ -146,28 +152,8 @@ The main interface consists of two functional modules: affinity map inference mo
 <section id="global-configuration">
 <h3>Global Configuration<a class="headerlink" href="#global-configuration" title="Link to this heading"></a></h3>
 <p>This section is identical to the previous configuration. Only an interface has been added to facilitate configuration.
-Input <code class="docutils literal notranslate"><span class="pre">9</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, view current <strong>global configuration</strong>:
-Input <code class="docutils literal notranslate"><span class="pre">8</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, edit current <strong>global configuration</strong>:
-<img alt="global configuration" src="../_images/aff9.png" /></p>
-<p>For the title:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">Section</span></code>: the configuration file for which module.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Parameter</span></code>: the key in configuration file.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Value</span></code>: the value of key</p></li>
-</ul>
-<p>For the keys in instance segmentation module:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">main</span></code>: the main config file path for affinity map segmentation module, incuding segmentation and aggregation.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">prec</span></code>: the config file path for the Precomputed format converter.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">downsample</span></code>: the config file path for the Precomputed data downsampling.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">gen_mask</span></code>: the config file path for mask generator of Precomputed data.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mask_prec</span></code>:  the config file path for masking of Precomputed data.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mask_tif</span></code>: the config file path for masking of tif data.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">resize_tif</span></code>: the config file path for resizing of tif data.</p></li>
-</ul>
-<blockquote>
-<div><p><em><strong>The meaning of each parameter is documented in every configuration file.</strong></em></p>
-</div></blockquote>
+Input <code class="docutils literal notranslate"><span class="pre">10</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, view current <strong>global configuration</strong>:
+Input <code class="docutils literal notranslate"><span class="pre">9</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, edit current <strong>global configuration</strong>.</p>
 </section>
 <section id="affinity-map-segmentation-by-blocks">
 <h3>Affinity map segmentation by blocks<a class="headerlink" href="#affinity-map-segmentation-by-blocks" title="Link to this heading"></a></h3>
@@ -180,7 +166,8 @@ Input <code class="docutils literal notranslate"><span class="pre">8</span></cod
 </section>
 <section id="blocks-merging-pools">
 <h3>Blocks merging: pools<a class="headerlink" href="#blocks-merging-pools" title="Link to this heading"></a></h3>
-<p>Input <code class="docutils literal notranslate"><span class="pre">3</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, using <em><strong>local resources</strong></em> to generate a global ID pool for all blocks.</p>
+<p>Input <code class="docutils literal notranslate"><span class="pre">3</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, using <em><strong>local resources</strong></em> to generate a global ID pool for all blocks.
+Input <code class="docutils literal notranslate"><span class="pre">4</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, using <em><strong>HPC resources</strong></em> to generate a global ID pool for all blocks.</p>
 <p>The module is based on the configuration files (<code class="docutils literal notranslate"><span class="pre">main</span></code> ,  in global configuration file). And before start the training, you can modify the configuration.</p>
 <p>This step perform counting and calculating the global ID based on the intersection areas between blocks, and outputs a global ID pool.</p>
 <p>The process is fast and uses minimal memory. You can directly use local resources or manually allocate HPC resources.
@@ -188,7 +175,8 @@ Input <code class="docutils literal notranslate"><span class="pre">8</span></cod
 </section>
 <section id="blocks-merging-apply">
 <h3>Blocks merging: apply<a class="headerlink" href="#blocks-merging-apply" title="Link to this heading"></a></h3>
-<p>Input <code class="docutils literal notranslate"><span class="pre">4</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, using <em><strong>local resources</strong></em> to apply the global ID pool to all blocks and output a precomputed data of full volume.</p>
+<p>Input <code class="docutils literal notranslate"><span class="pre">5</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, using <em><strong>local resources</strong></em> to apply the global ID pool to all blocks and output a precomputed data of full volume.
+Input <code class="docutils literal notranslate"><span class="pre">6</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, using <em><strong>HPC resources</strong></em> to apply the global ID pool to all blocks and output a precomputed data of full volume.</p>
 <p>The module is based on the configuration files (<code class="docutils literal notranslate"><span class="pre">main</span></code> ,  in global configuration file). And before start the training, you can also modify the configuration.</p>
 <p>Based on the previously computed ID pool, this step applies it to all blocks and progressively writes it into the precomputed data.</p>
 <p>You can directly use local resources or manually allocate HPC resources.
@@ -196,36 +184,13 @@ Input <code class="docutils literal notranslate"><span class="pre">8</span></cod
 </section>
 <section id="status">
 <h3>Status<a class="headerlink" href="#status" title="Link to this heading"></a></h3>
-<p>Input <code class="docutils literal notranslate"><span class="pre">6</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, enter the <strong>Status Info</strong>. This section indicates which blocks have been successfully segmentated:
+<p>Input <code class="docutils literal notranslate"><span class="pre">7</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, enter the <strong>Status Info</strong>. This section indicates which blocks have been successfully segmentated:
 <img alt="Status" src="../_images/ins6.png" /></p>
 </section>
 <section id="clean">
 <h3>Clean<a class="headerlink" href="#clean" title="Link to this heading"></a></h3>
-<p>Input <code class="docutils literal notranslate"><span class="pre">7</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, enter the <strong>Clean Function</strong>. This section clear cache files and checkpoints of merging.
+<p>Input <code class="docutils literal notranslate"><span class="pre">8</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, enter the <strong>Clean Function</strong>. This section clear cache files and checkpoints of merging.
 <img alt="Status" src="../_images/ins7.png" /></p>
-</section>
-<section id="tools">
-<h3>Tools<a class="headerlink" href="#tools" title="Link to this heading"></a></h3>
-<p>Input <code class="docutils literal notranslate"><span class="pre">5</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, enter the <strong>tool menu</strong>:
-<img alt="tool menu" src="../_images/ins5.png" /></p>
-<p>Input <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, using <em><strong>local resources</strong></em> to convert tif/h5 data to precomputed format.</p>
-<p>Input <code class="docutils literal notranslate"><span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, using <em><strong>HPC resources</strong></em> to convert tif/h5 data to precomputed format.</p>
-<p>These tools are based on the configuration files (<code class="docutils literal notranslate"><span class="pre">prec</span></code> in global configuration file).Before start the converting, you can modify the configuration by CLI or any tools.</p>
-<p>Input <code class="docutils literal notranslate"><span class="pre">3</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, using <em><strong>local resources</strong></em> to create lower-resolution mipmap levels using voxel downsampling for precomputed data.</p>
-<p>Input <code class="docutils literal notranslate"><span class="pre">4</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, using <em><strong>HPC resources</strong></em> to create lower-resolution mipmap levels using voxel downsampling for precomputed data.</p>
-<p>These tools are based on the configuration files (<code class="docutils literal notranslate"><span class="pre">downsample</span></code> in global configuration file).Before start the converting, you can modify the configuration by CLI or any tools.</p>
-<p>Input <code class="docutils literal notranslate"><span class="pre">5</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, using <em><strong>local resources</strong></em> to generate binary masks from affinity maps.</p>
-<p>Input <code class="docutils literal notranslate"><span class="pre">6</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, using <em><strong>HPC resources</strong></em> to generate binary masks from affinity maps.</p>
-<p>These tools are based on the configuration files (<code class="docutils literal notranslate"><span class="pre">gen_mask</span></code> in global configuration file).Before start the converting, you can modify the configuration by CLI or any tools.</p>
-<p>Input <code class="docutils literal notranslate"><span class="pre">7</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, using <em><strong>local resources</strong></em> to apply a mask to prec images, preserving structure.</p>
-<p>Input <code class="docutils literal notranslate"><span class="pre">8</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, using <em><strong>HPC resources</strong></em> to apply a mask to prec images, preserving structure.</p>
-<p>These tools are based on the configuration files (<code class="docutils literal notranslate"><span class="pre">mask_prec</span></code> in global configuration file).Before start the converting, you can modify the configuration by CLI or any tools.</p>
-<p>Input <code class="docutils literal notranslate"><span class="pre">9</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, using <em><strong>local resources</strong></em> to apply a mask to tif images, preserving structure.</p>
-<p>Input <code class="docutils literal notranslate"><span class="pre">10</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, using <em><strong>HPC resources</strong></em> to apply a mask to tif images, preserving structure.</p>
-<p>These tools are based on the configuration files (<code class="docutils literal notranslate"><span class="pre">mask_tif</span></code> in global configuration file).Before start the converting, you can modify the configuration by CLI or any tools.</p>
-<p>Input <code class="docutils literal notranslate"><span class="pre">11</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, using <em><strong>local resources</strong></em> to resize tif volumes to new voxel size or dimension.</p>
-<p>Input <code class="docutils literal notranslate"><span class="pre">12</span></code> and <code class="docutils literal notranslate"><span class="pre">Enter</span></code>, using <em><strong>HPC resources</strong></em> to resize tif volumes to new voxel size or dimension.</p>
-<p>These tools are based on the configuration files (<code class="docutils literal notranslate"><span class="pre">resize_tif</span></code> in global configuration file).Before start the converting, you can modify the configuration by CLI or any tools.</p>
 </section>
 </section>
 </section>
