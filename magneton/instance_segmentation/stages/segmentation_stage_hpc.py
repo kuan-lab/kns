@@ -58,7 +58,7 @@ def _slurm_script(cfg, stage_cfg, job_dir, array_len):
     workers_per_job = int(hpc.get("workers_per_job", 2))
     time = hpc.get("time", "04:00:00")
     mem = hpc.get("mem", "16G")
-    cups = hpc.get("cups", "8")
+    cpus = hpc.get("cpus", "8")
     hpc_num = hpc.get("hpc_num", "1")
     partition = hpc.get("partition", None)
     # account = hpc.get("account", None)
@@ -78,7 +78,7 @@ def _slurm_script(cfg, stage_cfg, job_dir, array_len):
         f"#SBATCH --job-name=segmentation_chunks",
         f"#SBATCH --time={time}",
         f"#SBATCH --ntasks=1 --nodes=1",
-        f"#SBATCH --cpus-per-task={cups}",
+        f"#SBATCH --cpus-per-task={cpus}",
         f"#SBATCH --mem-per-cpu={mem}",
         f"#SBATCH --array=0-{array_len-1}%{hpc_num}",
         f"#SBATCH --output={log_dir}/%x_%A_%a.out",
