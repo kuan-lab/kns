@@ -36,6 +36,7 @@ segmentation_stage:
     job_dir: "magneton/jobs/seg"            # Directory for generating scripts and lists
     blocks_per_job: 1                             # The number of blocks in an HPC node
     workers_per_job: 1                            # Number of parallel workers launched per job within the node
+    hpc_num: 4                                    # Number of hpc node
     python_bin: "python"                          # Python path
     time: "00:30:00"                              # Time for each task
     cpus: 16                                      # Cpu number 
