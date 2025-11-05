@@ -44,7 +44,7 @@ segmentation_stage:
     extra_modules: ["StdEnv", ]                                         # List of modules requiring loading
     conda: "/gpfs/radev/home/zz545/miniconda3/etc/profile.d/conda.sh"   # Path of conda
     env: "pytc"                                                         # Name of conda env
-    work_path: /gpfs/radev/home/zz545/project                           # Work Path
+    work_path: .                                 # Work Path
 
 merge_stage:
   metadata_dir: "magneton/merge_metadata"                # Folder of metadata 
@@ -75,4 +75,4 @@ merge_stage:
     extra_modules: ["StdEnv", ]                                         # List of modules requiring loading
     conda: "/gpfs/radev/home/zz545/miniconda3/etc/profile.d/conda.sh"   # Path of conda
     env: "pytc"                                                         # Name of conda env
-    work_path: /gpfs/radev/home/zz545/project                           # Work Path
+    work_path: .                                 # Work Path
