@@ -58,13 +58,13 @@ def _slurm_script(cfg, stage_cfg, job_dir, array_len):
     if work_path:   lines.append(f"cd {work_path}")
 
     global_cfgs = load_global_config_path("magneton/config.yaml")
-    # cfg_path = global_cfgs.get("instance_segmentation/downsample", "magneton/instance_segmentation/configs/config_downsample.yaml")
+    # cfg_path = global_cfgs.get("toolkit/downsample", "magneton/toolkit/configs/config_downsample.yaml")
     cfg_path = (
-        global_cfgs.get("instance_segmentation", {})
-                .get("downsample", "magneton/instance_segmentation/configs/config_downsample.yaml")
+        global_cfgs.get("toolkit", {})
+                .get("downsample", "magneton/toolkit/configs/config_downsample.yaml")
     )
     lines += [
-        f"{python_bin} -m magneton.instance_segmentation.tools.downsample_prec "
+        f"{python_bin} -m magneton.toolkit.tools.downsample_prec "
         f"--config {cfg_path}"
     ]
 
@@ -77,7 +77,7 @@ def _slurm_script(cfg, stage_cfg, job_dir, array_len):
 def submit_local_hpc(global_cfg, stage_cfg, restart=False, dry_run=False):
     """
     Generate job lists and submission scripts (Slurm job arrays).
-    Process a set of block indices locally on nodes using instance_segmentation.tools.downsample_prec.
+    Process a set of block indices locally on nodes using toolkit.tools.downsample_prec.
     """
     hpc = stage_cfg.get("hpc", {})
     if not hpc.get("enable", False):
