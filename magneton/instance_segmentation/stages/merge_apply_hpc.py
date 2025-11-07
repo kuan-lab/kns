@@ -106,8 +106,7 @@ def _slurm_script(cfg, stage_cfg, job_dir, array_len):
     )
     lines += [
         "set -e",
-        f"INDICES=$(sed -n \"$((SLURM_ARRAY_TASK_ID+1))p\" {manifest})",
-        f'echo \"Running shard indices: $INDICES\"',
+        f'echo \"Running: {manifest}\"',
 
         # Run the locally parallel scripts within each job (which will parse indices and run on a single node using ProcessPool).
         f"{python_bin} -m magneton.instance_segmentation.stages.merge_apply "
