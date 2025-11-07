@@ -145,7 +145,7 @@ def submit_local_hpc(global_cfg, stage_cfg, restart=False, dry_run=False):
 
     # Generate Script
     if scheduler == "slurm":
-        script_path = _slurm_script(global_cfg, stage_cfg, job_dir, n_chunks)
+        script_path = _slurm_script(global_cfg, stage_cfg, job_dir, 1)
         submit_cmd = ["sbatch", script_path]
     else:
         raise ValueError(f"Unknown scheduler: {scheduler}")
