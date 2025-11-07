@@ -141,7 +141,7 @@ def submit_local_hpc(global_cfg, stage_cfg, restart=False, dry_run=False):
         return
 
     manifest, n_chunks = _write_manifest(job_dir, pending, blocks_per_job)
-    print(f"[INFO] {len(pending)} blocks pending processing, manifest: {manifest}, estimated to generate {n_chunks} jobs.")
+    print(f"[INFO] {len(pending)} blocks pending processing, manifest: {manifest}.")
 
     # Generate Script
     if scheduler == "slurm":
