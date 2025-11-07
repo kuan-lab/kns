@@ -33,7 +33,7 @@ def _pending_block_indices(cfg, restart=False):
     pending = []
     for i, _coords in enumerate(blocks):
         done_flag = os.path.join(local_ckpt_dir, f"block_{i:04d}.done")
-        if not os.path.exists(done_flag) or restart:
+        if os.path.exists(done_flag) or restart:
             pending.append(i)
     return pending
 
@@ -110,7 +110,7 @@ def _slurm_script(cfg, stage_cfg, job_dir, array_len):
         f'echo \"Running shard indices: $INDICES\"',
 
         # Run the locally parallel scripts within each job (which will parse indices and run on a single node using ProcessPool).
-        f"{python_bin} -m magneton.instance_segmentation.stages.build_id_pools_parallel "
+        f"{python_bin} -m magneton.instance_segmentation.stages.merge_pools "
         f"--config {cfg_path} --indices \"$INDICES\" --workers {workers_per_job} --debug"
     ]
 
