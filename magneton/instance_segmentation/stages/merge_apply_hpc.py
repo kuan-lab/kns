@@ -110,8 +110,8 @@ def _slurm_script(cfg, stage_cfg, job_dir, array_len):
         f'echo \"Running shard indices: $INDICES\"',
 
         # Run the locally parallel scripts within each job (which will parse indices and run on a single node using ProcessPool).
-        f"{python_bin} -m magneton.instance_segmentation.stages.apply_pools_to_global "
-        f"--config {cfg_path} --indices \"$INDICES\" --workers {workers_per_job} --debug"
+        f"{python_bin} -m magneton.instance_segmentation.stages.merge_apply "
+        f"--config {cfg_path}"
     ]
 
     with open(script_path, "w") as f:
@@ -145,7 +145,7 @@ def submit_local_hpc(global_cfg, stage_cfg, restart=False, dry_run=False):
 
     # Generate Script
     if scheduler == "slurm":
-        script_path = _slurm_script(global_cfg, stage_cfg, job_dir, n_chunks)
+        script_path = _slurm_script(global_cfg, stage_cfg, job_dir, 1)
         submit_cmd = ["sbatch", script_path]
     else:
         raise ValueError(f"Unknown scheduler: {scheduler}")
