@@ -33,7 +33,7 @@ def _pending_block_indices(cfg, restart=False):
     pending = []
     for i, _coords in enumerate(blocks):
         done_flag = os.path.join(local_ckpt_dir, f"block_{i:04d}.done")
-        if not os.path.exists(done_flag) or restart:
+        if os.path.exists(done_flag) or restart:
             pending.append(i)
     return pending
 
