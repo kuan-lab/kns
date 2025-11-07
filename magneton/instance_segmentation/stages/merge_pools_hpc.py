@@ -111,7 +111,7 @@ def _slurm_script(cfg, stage_cfg, job_dir, array_len):
 
         # Run the locally parallel scripts within each job (which will parse indices and run on a single node using ProcessPool).
         f"{python_bin} -m magneton.instance_segmentation.stages.merge_pools "
-        f"--config {cfg_path} --indices \"$INDICES\" --workers {workers_per_job} --debug"
+        f"--config {cfg_path}"
     ]
 
     with open(script_path, "w") as f:
